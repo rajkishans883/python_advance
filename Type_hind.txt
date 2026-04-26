@@ -1,0 +1,366 @@
+Type Hints in Python: A Detailed Guide
+Type hints are a feature in Python that allow you to explicitly declare the expected data types of variables, function parameters, and return values. They were introduced in Python 3.5 (PEP 484) and have since become a standard for writing more maintainable and self-documenting code.
+
+Why Use Type Hints?
+
+Improved Code Readability: Makes it clear what types of data a function expects and returns.
+Better IDE Support: Enables autocompletion, type checking, and error detection in editors like VS Code or PyCharm.
+Early Bug Detection: Helps catch type-related errors before runtime.
+Self-Documenting Code: Acts as documentation for other developers (or your future self).
+
+Basic Syntax of Type Hints
+1. Variable Type Hints
+python
+Copy
+
+name: str = "Alice"
+age: int = 30
+is_student: bool = True
+
+
+
+2. Function Type Hints
+python
+Copy
+
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+
+
+
+3. Return Type Hints
+python
+Copy
+
+def add(a: int, b: int) -> int:
+    return a + b
+
+
+
+4. Optional Parameters
+python
+Copy
+
+from typing import Optional
+
+def greet(name: Optional[str] = None) -> str:
+    if name:
+        return f"Hello, {name}!"
+    return "Hello, stranger!"
+
+
+
+5. Union Types
+python
+Copy
+
+from typing import Union
+
+def square(number: Union[int, float]) -> Union[int, float]:
+    return number ** 2
+
+
+
+6. List, Dict, Set, Tuple Type Hints
+python
+Copy
+
+from typing import List, Dict, Set, Tuple
+
+def process_data(
+    numbers: List[int],
+    mapping: Dict[str, int],
+    unique_items: Set[str],
+    coordinates: Tuple[float, float]
+) -> None:
+    pass
+
+
+
+7. Any Type
+python
+Copy
+
+from typing import Any
+
+def process(value: Any) -> None:
+    print(value)
+
+
+
+8. Custom Types
+python
+Copy
+
+from typing import List, Dict, Tuple, Optional, Union, Any
+
+# Define a custom type for a list of integers
+Numbers = List[int]
+
+def sum_numbers(numbers: Numbers) -> int:
+    return sum(numbers)
+
+
+
+
+Advanced Type Hints
+1. Type Aliases
+python
+Copy
+
+from typing import List, Tuple
+
+# Define a type alias for a list of tuples
+Point = Tuple[float, float]
+Points = List[Point]
+
+def calculate_distance(points: Points) -> float:
+    # Implementation here
+    pass
+
+
+
+2. Generic Types
+python
+Copy
+
+from typing import TypeVar, List, Dict
+
+T = TypeVar('T')  # Declare a type variable
+
+def first_item(items: List[T]) -> T:
+    return items[0]
+
+# Example usage
+names: List[str] = ["Alice", "Bob"]
+first_name: str = first_item(names)  # Inferred type is str
+
+
+
+3. Callable Types
+python
+Copy
+
+from typing import Callable
+
+def apply(func: Callable[[int, int], int], a: int, b: int) -> int:
+    return func(a, b)
+
+result = apply(lambda x, y: x + y, 3, 5)  # result is 8
+
+
+
+4. Class Type Hints
+python
+Copy
+
+class Person:
+    def __init__(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+def greet_person(person: Person) -> str:
+    return f"Hello, {person.name}!"
+
+
+
+5. TypedDict (for Dictionaries with Fixed Keys)
+python
+Copy
+
+from typing import TypedDict
+
+class PersonDict(TypedDict):
+    name: str
+    age: int
+
+def greet_person(person: PersonDict) -> str:
+    return f"Hello, {person['name']}!"
+
+
+
+
+Type Hints in Practice
+Example 1: Function with Type Hints
+python
+Copy
+
+from typing import List, Dict, Optional
+
+def calculate_average(numbers: List[float]) -> float:
+    if not numbers:
+        raise ValueError("Empty list")
+    return sum(numbers) / len(numbers)
+
+def process_data(data: Dict[str, List[int]]) -> Dict[str, float]:
+    result = {}
+    for key, values in data.items():
+        result[key] = sum(values) / len(values)
+    return result
+
+
+
+Example 2: Class with Type Hints
+python
+Copy
+
+from typing import List, Optional
+
+class Book:
+    def __init__(self, title: str, author: str, year: int):
+        self.title = title
+        self.author = author
+        self.year = year
+
+class Library:
+    def __init__(self):
+        self.books: List[Book] = []
+
+    def add_book(self, book: Book) -> None:
+        self.books.append(book)
+
+    def find_book(self, title: str) -> Optional[Book]:
+        for book in self.books:
+            if book.title == title:
+                return book
+        return None
+
+
+
+
+Common Interview Questions on Type Hints
+Theory Questions
+
+What are type hints in Python, and why are they used?
+How do type hints improve code maintainability?
+What is the difference between Optional[int] and Union[int, None]?
+How do you define a type hint for a list of integers?
+What is a TypeVar in Python, and when would you use it?
+How do you use type hints with dictionaries that have fixed keys?
+What is the purpose of the Any type in Python?
+How do you create a custom type alias in Python?
+What is the difference between static typing and dynamic typing? How does Python’s type hinting fit into this?
+How do type hints help with IDE support?
+
+Practical/Coding Questions
+
+Write a function with type hints that takes a list of integers and returns their sum.
+Write a function with type hints that takes a dictionary with string keys and integer values, and returns the key with the highest value.
+Define a class Person with type hints for its attributes and methods.
+Write a function with type hints that takes a list of strings and returns a dictionary where the keys are the strings and the values are their lengths.
+Use TypeVar to write a generic function that returns the first element of a list, regardless of the list’s type.
+Write a function with type hints that takes a callable function and two integers, and returns the result of applying the function to the integers.
+Define a TypedDict for a Person with keys name (string) and age (integer), and write a function that takes this TypedDict and returns a greeting string.
+Write a function with type hints that takes a list of optional integers and returns the sum of the non-None values.
+Write a function with type hints that takes a list of tuples, where each tuple contains a string and an integer, and returns a dictionary mapping the strings to the integers.
+Write a class with type hints that represents a bank account with methods for depositing and withdrawing money.
+
+Theory for Interview Preparation
+1. What Are Type Hints?
+Type hints are annotations in Python code that indicate the expected data types of variables, function parameters, and return values. They are defined using the syntax variable: type and def func(param: type) -> return_type:.
+2. Dynamic vs. Static Typing
+
+Dynamic Typing: Python is dynamically typed, meaning types are checked at runtime. Variables can hold values of any type, and types are associated with values, not variables.
+Static Typing: Types are checked at compile time. Type hints bring some benefits of static typing to Python, but Python remains dynamically typed.
+3. Benefits of Type Hints
+
+Readability: Makes code easier to understand.
+Tooling Support: Enables better autocompletion and error detection in IDEs.
+Maintainability: Helps catch type-related bugs early.
+Documentation: Serves as inline documentation.
+4. Optional and Union Types
+
+Optional[int] is equivalent to Union[int, None]. It indicates that a value can be either an integer or None.
+Union[int, str] indicates that a value can be either an integer or a string.
+5. TypeVar and Generics
+
+TypeVar is used to define generic types. For example, T = TypeVar('T') can be used to write functions that work with any type.
+Example:
+python
+Copy
+
+from typing import TypeVar, List
+
+T = TypeVar('T')
+
+def first_item(items: List[T]) -> T:
+    return items[0]
+
+
+
+
+6. TypedDict
+
+TypedDict is used to define dictionaries with a fixed set of keys and their types.
+Example:
+python
+Copy
+
+from typing import TypedDict
+
+class Person(TypedDict):
+    name: str
+    age: int
+
+
+
+
+7. Callable Type Hints
+
+Callable[[Arg1Type, Arg2Type], ReturnType] is used to annotate functions that take other functions as arguments.
+Example:
+python
+Copy
+
+from typing import Callable
+
+def apply(func: Callable[[int, int], int], a: int, b: int) -> int:
+    return func(a, b)
+
+
+
+
+8. Forward References
+
+When a type hint refers to a class that hasn’t been defined yet, you can use a string literal.
+Example:
+python
+Copy
+
+class TreeNode:
+    def __init__(self, value: int, left: 'TreeNode' = None, right: 'TreeNode' = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+
+
+9. Runtime Behavior of Type Hints
+
+Type hints are ignored at runtime by the Python interpreter. They are purely for static analysis and tooling.
+Example:
+python
+Copy
+
+def add(a: int, b: int) -> int:
+    return a + b
+
+print(add("hello", "world"))  # No error at runtime, but type checkers will flag this
+
+
+
+
+10. Type Checkers
+
+Tools like mypy, pyright, and pytype can statically analyze Python code with type hints to catch type-related errors before runtime.
+Example with mypy:
+bash
+Copy
+
+pip install mypy
+mypy your_script.py
+
+
+
+
