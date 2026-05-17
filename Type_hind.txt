@@ -20,7 +20,7 @@ is_student: bool = True
 
 
 2. Function Type Hints
-python
+pythongit 
 Copy
 
 def greet(name: str) -> str:
