@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-05-28T14:11:32.717314",
+  "summary": {
+    "download": {
+      "total_images": 12,
+      "successful": 12,
+      "failed": 0,
+      "total_size_kb": 711.18,
+      "total_time_sec": 4.335,
+      "avg_speed_kbps": 170.08
+    },
+    "processing": {
+      "successful": 0,
+      "failed": 12,
+      "total_time_sec": 0,
+      "avg_time_per_image": null,
+      "original_size_kb": 711.18,
+      "processed_size_kb": 0.0,
+      "compression_percent": 100.0
+    },
+    "overall": {
+      "total_time_sec": 4.335,
+      "images_per_second": 2.77
+    }
+  },
+  "detailed": [
+    {
+      "index": 1,
+      "filename": "image_01.jpg",
+      "download_time_sec": 0.428,
+      "download_speed_kbps": 205.9,
+      "file_size_kb": 88.02,
+      "process_time_sec": null,
+      "original_size_kb": 88.02,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 2,
+      "filename": "image_02.jpg",
+      "download_time_sec": 0.319,
+      "download_speed_kbps": 118.99,
+      "file_size_kb": 37.98,
+      "process_time_sec": null,
+      "original_size_kb": 37.98,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 3,
+      "filename": "image_03.jpg",
+      "download_time_sec": 0.328,
+      "download_speed_kbps": 250.11,
+      "file_size_kb": 82.01,
+      "process_time_sec": null,
+      "original_size_kb": 82.01,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 4,
+      "filename": "image_04.jpg",
+      "download_time_sec": 0.405,
+      "download_speed_kbps": 84.08,
+      "file_size_kb": 34.09,
+      "process_time_sec": null,
+      "original_size_kb": 34.09,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 5,
+      "filename": "image_05.jpg",
+      "download_time_sec": 0.322,
+      "download_speed_kbps": 213.04,
+      "file_size_kb": 68.67,
+      "process_time_sec": null,
+      "original_size_kb": 68.67,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 6,
+      "filename": "image_06.jpg",
+      "download_time_sec": 0.392,
+      "download_speed_kbps": 71.82,
+      "file_size_kb": 28.19,
+      "process_time_sec": null,
+      "original_size_kb": 28.19,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 7,
+      "filename": "image_07.jpg",
+      "download_time_sec": 0.33,
+      "download_speed_kbps": 163.17,
+      "file_size_kb": 53.78,
+      "process_time_sec": null,
+      "original_size_kb": 53.78,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 8,
+      "filename": "image_08.jpg",
+      "download_time_sec": 0.331,
+      "download_speed_kbps": 319.28,
+      "file_size_kb": 105.81,
+      "process_time_sec": null,
+      "original_size_kb": 105.81,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 9,
+      "filename": "image_09.jpg",
+      "download_time_sec": 0.4,
+      "download_speed_kbps": 41.33,
+      "file_size_kb": 16.53,
+      "process_time_sec": null,
+      "original_size_kb": 16.53,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 10,
+      "filename": "image_10.jpg",
+      "download_time_sec": 0.265,
+      "download_speed_kbps": 259.39,
+      "file_size_kb": 68.75,
+      "process_time_sec": null,
+      "original_size_kb": 68.75,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 11,
+      "filename": "image_11.jpg",
+      "download_time_sec": 0.411,
+      "download_speed_kbps": 95.61,
+      "file_size_kb": 39.32,
+      "process_time_sec": null,
+      "original_size_kb": 39.32,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    },
+    {
+      "index": 12,
+      "filename": "image_12.jpg",
+      "download_time_sec": 0.403,
+      "download_speed_kbps": 218.29,
+      "file_size_kb": 88.02,
+      "process_time_sec": null,
+      "original_size_kb": 88.02,
+      "processed_size_kb": null,
+      "download_status": "success",
+      "process_status": "failed",
+      "error": "Processing: module 'PIL.Image' has no attribute 'Resampling'"
+    }
+  ]
+}
